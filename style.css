@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+:root{
+ 
+  /* ### Primary
+  (main background) */
+  --Very-dark-blue: hsl(233, 47%, 7%);
+  /* (card background) */
+  --Dark-desaturated-blue: hsl(244, 38%, 16%);
+  /* (accent) */
+  --Soft-violet: hsla(277, 64%, 61%,0.6);
+  
+  /* ### Neutral */
+  /* (main heading, stats) */
+  --White: hsl(0, 0%, 100%);
+   /* (main paragraph */
+  --Slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+  /*  (stat headings) */
+  --Slightly-transparent-white: hsla(0, 0%, 100%, 0.6);
+  
+  --ff-primary: 'Lexend Deca', sans-serif;
+  --ff-secondary: 'Inter', sans-serif;
+  
+  --Fs-body: 15px;
+}
+*,*::before,*::after{
+  box-sizing: border-box;
+  margin: 0;
+}
+body{
+  font-size: var(--Fs-body);
+  font-family: var(--ff-primary);
+  min-height: 100vh;
+  padding: 0;
+  line-height: 1.8;
+  background-color: var(--Very-dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.container{
+  background-color: var(--Dark-desaturated-blue);
+  max-width: 500px;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 0.5rem;
+  margin: 0 2rem;
+}
+.image-mobile{
+  position: relative;
+}
+.desktop{
+  display: none;
+}
+.image-mobile::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left:0;
+  right: 0;
+  bottom:0;
+  background-color: var(--Soft-violet);
+
+}
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content{
+  padding: 2rem;
+  text-align: center;
+  color: var(--White);
+}
+.title{
+  font-size: 2rem;
+  line-height: normal;
+  font-weight: 700;
+}
+.title span{
+  color: var(--Soft-violet);
+}
+.title,.info{
+  margin-bottom: 1.5rem;
+}
+.info{
+  font-family: var(--ff-secondary);
+  color: var(--Slightly-transparent-white);
+}
+.flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--ff-secondary);
+
+}
+.list ul{
+  list-style: none;
+  margin: 0;
+  padding:0;
+  
+}
+li.num{
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+li.name{
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--Slightly-transparent-white);
+}
+@media (min-width:768px) {
+  .container{
+    grid-template-columns: 1fr 1fr;
+    max-width: 1000px;
+  }
+
+  .content{
+    order: 1;
+    text-align: left;
+    padding: 4rem 4rem;
+  }
+  .image-mobile{
+    order: 2;
+  }
+  .mobile{
+    display: none;
+  }
+  .desktop{
+    display: block;
+  }
+  .flex{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+}
